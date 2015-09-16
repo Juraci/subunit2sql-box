@@ -12,3 +12,4 @@
       - python-dev
       - libmysqlclient-dev
       - libpq-dev
+      - python-psycopg2

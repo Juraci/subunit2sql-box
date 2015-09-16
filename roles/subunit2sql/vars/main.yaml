@@ -3,7 +3,14 @@ user: "vagrant"
 home: "/home/{{ user }}"
 repo: "https://git.openstack.org/openstack-infra/subunit2sql"
 repo_name: "subunit2sql"
+
 mysql:
+  - env: test
+    database_name: 'openstack_citest'
+    user: 'openstack_citest'
+    password: 'openstack_citest'
+
+postgresql:
   - env: test
     database_name: 'openstack_citest'
     user: 'openstack_citest'
