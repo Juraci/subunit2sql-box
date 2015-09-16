@@ -1,0 +1,6 @@
+---
+user: "vagrant"
+home: "/home/{{ user }}"
+repo: "https://git.openstack.org/openstack-infra/subunit2sql"
+repo_name: "subunit2sql"
+

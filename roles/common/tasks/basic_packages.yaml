@@ -5,4 +5,5 @@
  - apt: name={{ item }} state=latest
    with_items:
      - unzip
+     - tree
      - git

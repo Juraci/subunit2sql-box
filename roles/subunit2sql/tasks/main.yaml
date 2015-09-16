@@ -1,13 +1,4 @@
 ---
 
-  - apt: update_cache=yes
-
-  - name: ensures that the required packages are present
-    apt: name={{ item  }} state=latest
-    with_items:
-      - mysql-server
-      - mysql-client
-      - postgresql
-      - python-pip
-      - python-dev
-      - libmysqlclient-dev
+  - include: dependencies.yaml
+  - include: get_repo.yaml
