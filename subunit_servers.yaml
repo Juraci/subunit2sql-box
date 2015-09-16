@@ -1,0 +1,6 @@
+---
+- hosts: subunit-box
+  sudo: yes
+
+  roles:
+    - common
