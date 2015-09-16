@@ -1,0 +1,12 @@
+---
+
+- name: Ensures requirements.txt is installed
+  shell: "pip install -r {{ item }}"
+  register: pip_install_command
+  args:
+    chdir: "{{ home }}/{{ repo_name }}/"
+    failed_when: pip_install_command.rc != 0
+  with_items:
+    - "requirements.txt"
+    - "test-requirements.txt"
+

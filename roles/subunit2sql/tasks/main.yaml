@@ -2,3 +2,4 @@
 
   - include: dependencies.yaml
   - include: get_repo.yaml
+  - include: requirements.yaml

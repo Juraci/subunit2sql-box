@@ -11,3 +11,4 @@
       - python-pip
       - python-dev
       - libmysqlclient-dev
+      - libpq-dev
