@@ -2,3 +2,4 @@
 
   - name: Ensures subunit2sql repository is cloned
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes
+    sudo: no
