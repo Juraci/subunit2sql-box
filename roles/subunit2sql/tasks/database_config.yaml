@@ -1,0 +1,21 @@
+---
+
+  - name: ensures that the {{ item.database_name }} exists
+    mysql_db: name={{ item.database_name }} state=present
+    with_items: "{{ mysql }}"
+
+  - name: check user
+    shell: mysql -u root -e "SELECT user FROM mysql.user"
+    register: check_user
+    changed_when:  "'{{item.user}}' not in check_user.stdout"
+    failed_when: check_user.rc != 0
+    sudo: no
+    with_items: "{{ mysql }}"
+
+  - name: create remote user
+    shell: mysql -u root -e "GRANT ALL PRIVILEGES ON {{item.database_name}}.* TO '{{item.user}}'@'%' IDENTIFIED BY '{{item.password}}';"
+    register: remote_user
+    failed_when: remote_user.rc != 0
+    when: check_user|changed
+    sudo: no
+    with_items: "{{ mysql }}"
