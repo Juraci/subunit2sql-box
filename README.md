@@ -27,5 +27,5 @@ After it finishes you can connect to the vm and run the tests:
 ```
 $ vagrant ssh
 vagrant $ cd subunit2sql
-vagrant $ 
+vagrant $ python -m testtools.run discover -t ./ ./subunit2sql/tests
 ```
