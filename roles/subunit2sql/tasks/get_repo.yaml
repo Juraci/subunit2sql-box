@@ -1,11 +1,11 @@
 ---
 
-  - name: Ensures subunit2sql repository is cloned from a specific patch
-    git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes refspec={{ reference }} version={{ version }}
-    sudo: no
-    when: (reference is defined) and (version is defined)
 
   - name: Ensures subunit2sql repository is cloned from master
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes
     sudo: no
-    when: (reference is not defined) or (version is not defined)
+
+  - name: Ensures subunit2sql repository is cloned from a specific patch
+    git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes refspec={{ reference }} version={{ version }}
+    sudo: no
+    when: (reference is defined) and (version is defined)
