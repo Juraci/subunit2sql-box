@@ -1,8 +1,7 @@
 ---
 
-
   - name: Ensures subunit2sql repository is cloned from master
-    git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes
+    git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes version=master
     sudo: no
 
   - name: Ensures subunit2sql repository is cloned from a specific patch
