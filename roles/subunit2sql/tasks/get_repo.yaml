@@ -1,8 +1,16 @@
 ---
 
+  - name: Ensures the repo is deleted before fetching anything
+    shell: rm -rf {{ repo_name }}
+    args:
+      chdir: "{{ home }}/"
+    register: remove_command
+    failed_when: remove_command.rc != 0
+
   - name: Ensures subunit2sql repository is cloned from master
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes version=master
     sudo: no
+    when: (reference is not defined) or (version is not defined)
 
   - name: Ensures subunit2sql repository is cloned from a specific patch
     git: repo={{ repo }} dest={{ home }}/{{ repo_name }} force=yes refspec={{ reference }} version={{ version }}
