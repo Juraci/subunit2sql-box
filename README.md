@@ -4,9 +4,9 @@
 
 A [vagrant](http://docs.vagrantup.com/v2/why-vagrant/index.html) box that after provisioned will provide you with the following:
 
-- [subunit2sql repository] (https://git.openstack.org/cgit/openstack-infra/subunit2sql/) cloned from master or form an specific patch
+- [subunit2sql repository] (https://git.openstack.org/cgit/openstack-infra/subunit2sql/) cloned from master or from an specific patch
 - development and test dependencies installed
-- mysql and postgres databases installed and configured (both needed to run all the tests successfully)
+- Mysql and Postgresql databases installed and configured (both needed to run all the tests successfully)
 
 ### How?
 
